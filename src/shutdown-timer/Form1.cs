@@ -58,8 +58,15 @@ namespace shutdown_timer
         private void Shutdown()
         {
             Decimal totalSeconds = CalculateTotalSeconds();
-            Process.Start("shutdown.exe", "-s -t " + totalSeconds);
-            Application.Exit();
+            if (totalSeconds == 0)
+            {
+                MessageBox.Show("Uhmm, I guess you dont need a timer to shutdown computer immediately");
+            }
+            else
+            {
+                Process.Start("shutdown.exe", "-s -t " + totalSeconds);
+                Application.Exit();
+            }
         }
         private void Abort()
         {
