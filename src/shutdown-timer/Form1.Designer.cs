@@ -82,6 +82,7 @@
             // 
             this.lblShutdownTime.AutoSize = true;
             this.lblShutdownTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblShutdownTime.ForeColor = System.Drawing.Color.Red;
             this.lblShutdownTime.Location = new System.Drawing.Point(13, 135);
             this.lblShutdownTime.Name = "lblShutdownTime";
             this.lblShutdownTime.Size = new System.Drawing.Size(0, 20);

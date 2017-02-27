@@ -12,6 +12,18 @@ namespace shutdown_timer
 {
     public partial class Form1 : Form
     {
+        private Timer timer1;
+        public void InitTimer()
+        {
+            timer1 = new Timer();
+            timer1.Tick += new EventHandler(timer1_Tick);
+            timer1.Interval = 1000;
+            timer1.Start();
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            CalculateNextDate();
+        }
         private const Int32 ONE_MINUTE_IN_SECONDS = 60;
         private const Int32 ONE_HOUR_IN_SECONDS = 3600;
         private const Int32 ONE_DAY_IN_SECONDS = 86400;
@@ -19,6 +31,7 @@ namespace shutdown_timer
         {
             InitializeComponent();
             CalculateNextDate();
+            InitTimer();
         }
         private void btnShutdown_Click(object sender, EventArgs e)
         {
