@@ -77,7 +77,7 @@ namespace shutdown_timer
             }
             else
             {
-                Process.Start("shutdown.exe", "-s -t " + totalSeconds);
+                Process.Start("shutdown.exe", "-s -f -t " + totalSeconds);
                 Application.Exit();
             }
         }
